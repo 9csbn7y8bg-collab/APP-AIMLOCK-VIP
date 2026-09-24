@@ -1,0 +1,178 @@
+Tạo một web app mobile dashboard tên “UCHIHA V3”, thiết kế premium gaming dashboard, giao diện dọc tối ưu cho iPhone/iPad.
+
+PHONG CÁCH:
+- Dark mode cao cấp.
+- Nền gần như đen (#080405) với các vùng glow đỏ/burgundy rất nhẹ ở hai bên.
+- Card màu đen pha đỏ, trong suốt nhẹ, gradient đỏ đen.
+- Border đỏ rượu vang mờ.
+- Border-radius khoảng 24–28px.
+- Shadow/glow màu đỏ rất nhẹ.
+- Typography hiện đại, chữ trắng/xám sáng.
+- Tiêu đề section viết hoa, letter-spacing rộng, màu hồng đỏ nhạt.
+- Tổng thể giống một gaming performance dashboard cao cấp, tối giản, không quá nhiều màu.
+
+LAYOUT:
+- Nội dung chính nằm giữa màn hình.
+- Mobile-first, max-width khoảng 560px.
+- Khoảng cách giữa các card 18–22px.
+- Có bottom navigation cố định ở cuối màn hình.
+- Nội dung phía dưới phải có padding để không bị bottom navigation che.
+
+HEADER:
+Tạo một card đầu trang:
+“PREMIUM MOBILE DASHBOARD”
+“UCHIHA V3”
+
+Thiết kế chữ:
+- UCHIHA V3 lớn, bold, letter spacing rộng.
+- Header card nền gradient đen → đỏ rất nhẹ.
+
+REALTIME MONITOR:
+Tạo card:
+“REALTIME”
+“CPU & RAM Wave”
+“Premium compact monitor with aligned metrics.”
+
+Bên dưới tạo 4 ô thống kê dạng grid 2x2:
+
+FPS                 58
+Frame               68.0 ms
+CPU est             2%
+RAM                 197 MB
+
+Các ô có nền đen trong suốt, border đỏ mờ, bo góc 20px.
+
+BIỂU ĐỒ CPU:
+Tạo card:
+“CPU (Ước Lượng Theo Thời Gian Bản Mỗi Frame)”
+“Target: 60 FPS”
+
+Bên dưới là biểu đồ realtime nền đen:
+- Grid rất mờ.
+- Đường biểu đồ màu đỏ/hồng.
+- Đường biểu diễn dao động liên tục.
+- Có animation realtime.
+- Không cần mô phỏng số liệu phần cứng thật.
+- Hiển thị FPS và Frame Time ở khu vực nhỏ bên dưới biểu đồ.
+
+BIỂU ĐỒ RAM:
+Tạo card:
+“RAM (MB) / Heap Used”
+“Scale Auto”
+
+Có biểu đồ realtime tương tự:
+- nền đen
+- grid mờ
+- đường màu đỏ/hồng
+- animation mượt.
+
+REALTIME ACTIONS:
+Tạo card:
+“CONTROLS”
+“Realtime Actions”
+
+Các nút dạng grid 2 cột:
+
+[ UnLock 120 FPS : OFF ]    [ Xóa Console ]
+[ Dọn RAM ]                 [ Dọn CPU ]
+[ Tối Ưu RAM ]              [ Tối Ưu CPU ]
+[ Tối Ưu FPS ]
+
+Nút có:
+- nền đen
+- border đỏ mờ
+- bo góc 20px
+- chữ trắng
+- hiệu ứng hover/touch màu đỏ.
+- Khi nhấn “UnLock 120 FPS” đổi trạng thái ON/OFF trong giao diện.
+
+CONSOLE:
+Tạo card:
+“CONSOLE”
+“Command Output”
+
+Phía trên bên phải có:
+Logs 2
+Errors 0
+
+Bên dưới là terminal màu đen:
+[21:27:00.764] performance.memory không có. RAM realtime sẽ hiển thị N/A.
+[21:27:00.860] Ready. Type help() to see commands.
+
+Có ô nhập:
+“Nhập lệnh JS rồi Enter...”
+
+và nút:
+“Run”
+
+Khi người dùng nhập lệnh và nhấn Run:
+- Hiển thị lệnh trong console.
+- Hiển thị kết quả mô phỏng.
+- Tăng số Logs.
+- Nếu lỗi thì tăng Errors.
+- KHÔNG thực thi JavaScript nguy hiểm hoặc truy cập trái phép vào hệ thống/device.
+
+BOTTOM NAVIGATION:
+Tạo thanh navigation cố định cuối màn hình, dạng floating rounded container.
+
+Có 5 mục:
+
+⌂
+Home
+
+☷
+Func
+
+◈
+Boost
+
+▣
+Live
+
+⚙
+Cài đặt
+
+Mục Live đang active:
+- nền đỏ/burgundy gradient
+- glow đỏ nhẹ
+- chữ trắng.
+
+Các mục còn lại màu xám/hồng nhạt.
+
+CHỨC NĂNG:
+- Home: dashboard tổng quan.
+- Func: các chức năng.
+- Boost: các tùy chọn tối ưu hóa giao diện.
+- Live: màn hình CPU/RAM/Console.
+- Cài đặt: cài đặt giao diện.
+- Chuyển tab không reload trang.
+- Có animation chuyển đổi mượt.
+
+TƯƠNG TÁC:
+- Nút có hiệu ứng press khi chạm.
+- Card có animation fade/slide nhẹ.
+- Biểu đồ cập nhật realtime bằng dữ liệu mô phỏng.
+- FPS, Frame Time, CPU và RAM hiển thị số liệu mô phỏng thay đổi theo thời gian.
+- Có nút Reset Console.
+- Có nút bật/tắt animation.
+- Lưu trạng thái ON/OFF bằng localStorage.
+
+RESPONSIVE:
+- Tối ưu iPhone.
+- Tối ưu iPad.
+- Không bị tràn ngang.
+- Bottom navigation luôn nằm trong vùng nhìn thấy.
+- Font và card tự co giãn theo kích thước màn hình.
+- Trên màn hình lớn vẫn giữ dashboard ở giữa.
+
+CÔNG NGHỆ:
+- HTML5
+- CSS3
+- JavaScript thuần hoặc React.
+- Không cần backend.
+- Không cần database.
+- Code sạch, chia component rõ ràng.
+- Có thể chạy trực tiếp trên trình duyệt.
+
+QUAN TRỌNG:
+Đây là dashboard giao diện mô phỏng. Không tuyên bố rằng website thực sự có khả năng tăng FPS, tăng RAM, giảm CPU hoặc thay đổi phần cứng/hệ điều hành nếu trình duyệt không có quyền làm việc đó.
